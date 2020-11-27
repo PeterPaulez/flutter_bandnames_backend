@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Server</title>
+</head>
+<body>
+    <h1>Access Denied</h1>
+
+    <script src='socket.io/socket.io.js'></script>
+    <script>
+        var socket = io();
+        socket.on('connect', function() {
+            console.log('Conexión establecida con el server');
+        });
+        socket.on('disconnect', function() {
+            console.log('Conexión perdida con el server');
+        });
+        // Es recomendable enviar un objeto no solo un string, etc.
+        socket.emit('mensaje', {nombre: 'Fernando'});
+        // Escuchar mensaje
+        socket.on('mensaje', function(payload) {
+            console.log('Escuchando:', payload);
+        });
+    </script>
+</body>
+</html>
