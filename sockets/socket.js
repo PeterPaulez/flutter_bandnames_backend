@@ -3,9 +3,11 @@ const Band = require('../models/band');
 const Bands = require('../models/bands');
 const bands = new Bands();
 bands.addBand(new Band('Queen'));
-bands.addBand(new Band('Héroes'));
+bands.addBand(new Band('Héroes del Silencio'));
 bands.addBand(new Band('Depeche Mode'));
 bands.addBand(new Band('Beatles'));
+bands.addBand(new Band('Spice Girls'));
+bands.addBand(new Band('Metallica'));
 console.log(bands);
 
 // Mensajes de Sockets
